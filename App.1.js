@@ -1,57 +1,17 @@
 import React, {useState, useEffect} from 'react';
-
 import {
   View,
   Text,
   TouchableOpacity,
-  StatusBar,
-  TextInput,
-  Image,
   FlatList,
   ScrollView,
   ImageBackground,
-  Button,
-  Alert,
-  StyleSheet,
-  SafeAreaView,
-  onPressLearnMore,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import LinearGradient from 'react-native-linear-gradient';
-
 import MenuBar from './src/components/MenuBar';
 import Header from './src/components/Header';
 import Jadwal from './src/components/Jadwal';
 
-// export const getProduct = () => async dispatch => {
-//   try {
-//     dispatch({
-//       type: 'allProductRequest',
-//     });
-//     const {data} = await axios.get('http://localhost:8080/ikm/web/api/setting');
-//     dispatch({
-//       type: 'allProductSuccess',
-//       payload: data,
-//     });
-//   } catch (error) {
-//     dispatch({
-//       type: 'allProductFail',
-//       payload: error.response.data.message,
-//     });
-//   }
-// };
-
-// export default function App() {
-//   const dispatch = useDispatch();
-//   const {products, error} = useSelector(state => state.products);
-
-//   useEffect(() => {
-//     if (error) {
-//       alert(error);
-//     }
-//     dispatch(getProduct());
-//   }, [dispatch, error]);
-const App = () => {
+export default function App() {
   const [pencarian, setPencarian] = useState('');
   const [kategori, setKategori] = useState([
     {namaKategori: 'Sepatu'},
@@ -90,7 +50,6 @@ const App = () => {
   // } catch (error) {
   //   alert(error.message);
   // }
-
   const getData = () => async () => {
     try {
       const response = await axios.get(
@@ -170,17 +129,17 @@ const App = () => {
                 </View>
                 <View>
                   {/* <Image
-                    source={item.image}
-                    style={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: 20,
-                      borderColor: '#FFFFFF',
-                      borderWidth: 2,
-                      marginLeft: 10,
-                      marginTop: 5,
-                    }}
-                  /> */}
+                          source={item.image}
+                          style={{
+                            width: 40,
+                            height: 40,
+                            borderRadius: 20,
+                            borderColor: '#FFFFFF',
+                            borderWidth: 2,
+                            marginLeft: 10,
+                            marginTop: 5,
+                          }}
+                        /> */}
                   <Text
                     style={{
                       fontWeight: 'bold',
@@ -202,7 +161,7 @@ const App = () => {
           />
         </View>
         <Jadwal />
-        {/* <View style={{flexDirection: 'row', marginTop: 10}}>
+        <View style={{flexDirection: 'row', marginTop: 30}}>
           <Text style={{color: '#0082F7', fontWeight: 'bold'}}>
             Kategori Produk
           </Text>
@@ -238,12 +197,10 @@ const App = () => {
               </TouchableOpacity>
             )}
           />
-        </View> */}
+        </View>
       </ScrollView>
 
       <MenuBar />
     </View>
   );
-};
-
-export default App;
+}

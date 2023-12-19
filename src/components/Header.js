@@ -5,27 +5,27 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const Header = props => {
   return (
     <View>
-      <View style={{flexDirection: 'row'}}>
+      <View style={{flexDirection: 'row', marginBottom: 10, marginTop: 20}}>
                 <Image
                   source={require('../image/logo.jpg')}
                   style={{
-                    width: 50,
-                    height: 50,
-                    borderRadius: 25,
+                    width: 70,
+                    height: 70,
+                    borderRadius: 70,
                     borderColor: '#FFFFFF',
                     borderWidth: 2,
                   }}
                 />
                 <View
                   style={{flex: 1, marginLeft: 10, justifyContent: 'center'}}>
-                  <Text style={{fontSize: 22, fontWeight: 'bold', color: '#212121'}}>
+                  <Text style={{fontSize: 17, fontWeight: 'bold', color: '#212121'}}>
                     Industri Kecil Menengah
                   </Text>
                   <Text style={{color: '#212121'}}>Kota Batu</Text>
                 </View>
               </View>
       <StatusBar barStyle="dark-content" backgroundColor={'#f4f4f4'} />
-      <View style={{flexDirection: 'row'}}>
+      {/* <View style={{flexDirection: 'row'}}>
         <TextInput
           value={props.pencarian}
           onChangeText={text => props.setPencarian(text)}
@@ -52,7 +52,7 @@ const Header = props => {
           }}>
           <Icon name="search" size={25} color="#FFFFFF" />
         </TouchableOpacity>
-      </View>
+      </View> */}
     </View>
   );
 };

@@ -1,36 +1,27 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {
-  View,
+  Image,
   Text,
   TouchableOpacity,
-  StatusBar,
-  TextInput,
-  Image,
+  View,
+  onPressLearnMore,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Jadwal = () => {
   return (
     <View>
-      <View style={{flexDirection: 'row', marginTop: 20}}>
-        <Text style={{color: '#0082F7', fontWeight: 'bold'}}>
-          Industri Kota Batu 
-        </Text>
-        <TouchableOpacity
-          style={{justifyContent: 'center', alignItems: 'flex-end', flex: 1}}>
-          <Text style={{color: '#FDB436', fontWeight: 'bold'}}>
-            Lihat Semua
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View>
+      <View style={{flexDirection: 'row', marginTop: -10}}>
         <View
           style={{
+            width: 150,
+            height: 35,
             borderRadius: 10,
             backgroundColor: '#FFFFFF',
-            elevation: 10,
-            marginTop: 10,
+            elevation: 5,
+            marginTop: 2,
+            marginBottom: 70,
           }}>
           <LinearGradient
             start={{x: 0, y: 0}}
@@ -40,19 +31,18 @@ const Jadwal = () => {
             <TouchableOpacity style={{padding: 20, borderRadius: 10}}>
               <View style={{flexDirection: 'row'}}>
                 <Image
-                  source={require('../image/logo.jpg')}
+                  source={require('../image/banner.jpg')}
                   style={{
-                    width: 50,
+                    width: 140,
                     height: 50,
-                    borderRadius: 25,
+                    borderRadius: 7,
                     borderColor: '#FFFFFF',
-                    borderWidth: 2,
                   }}
                 />
                 <View
                   style={{flex: 1, marginLeft: 10, justifyContent: 'center'}}>
                   <Text style={{color: '#FFFFFF', fontWeight: 'bold'}}>
-                    Industri Kecil menengah 
+                    Industri Kecil menengah
                   </Text>
                   <Text style={{color: '#f4f4f4'}}>Kota Batu</Text>
                 </View>
@@ -91,6 +81,32 @@ const Jadwal = () => {
               </View>
             </TouchableOpacity>
           </LinearGradient>
+        </View>
+        <View
+          style={{
+            borderRadius: 50,
+            justifyContent: 'center',
+            alignItems: 'flex-end',
+            flex: 1,
+            marginEnd: 130,
+            marginBottom: 35,
+          }}>
+          <TouchableOpacity
+            style={{backgroundColor: '#cb1d08', borderRadius: 7, size: 10}}
+            onPress={onPressLearnMore}
+            title="Learn More"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button">
+            <Text
+              style={{
+                color: 'white',
+                padding: 10,
+                fontSize: 8,
+                fontWeight: 'bold',
+              }}>
+              Learn More
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
